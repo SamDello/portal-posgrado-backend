@@ -11,10 +11,11 @@ const startServer = async () => {
     connection.release();
 
     app.listen(PORT, () => {
-      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      console.log(`Servidor corriendo en el puerto ${PORT}`);
     });
   } catch (error) {
     console.error('Error conectando a MySQL:', error.message);
+    process.exit(1);
   }
 };
 
