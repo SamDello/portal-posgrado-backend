@@ -9,8 +9,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:4200',
   'https://portal-posgrado-frontend.vercel.app',
-  'https://tu-dominio.com',
-  'https://www.tu-dominio.com'
+  
 ];
 
 app.use(cors({
