@@ -9,6 +9,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:4200',
   'https://portal-posgrado-frontend.vercel.app',
+  'https://portal-posgrado.vercel.app',
   
 ];
 
