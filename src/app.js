@@ -6,8 +6,22 @@ const contenidoRoutes = require('./routes/contenido.routes');
 
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:4200',
+  'https://tu-frontend.vercel.app',
+  'https://tu-dominio.com',
+  'https://www.tu-dominio.com'
+];
+
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error('Origen no permitido por CORS'));
+  },
   credentials: true
 }));
 
